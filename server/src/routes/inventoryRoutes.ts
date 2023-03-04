@@ -1,8 +1,9 @@
 import { Router } from "express";
-import  getInventories  from "../controllers/getInventories";
+import  getInventory  from "../controllers/getInventory";
 
 const router = Router();
 
-router.get('/', getInventories)
+router.get('/', getInventory);
+
 
 export default router;

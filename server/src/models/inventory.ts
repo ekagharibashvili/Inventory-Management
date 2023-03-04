@@ -1,10 +1,19 @@
 import { Sequelize, DataTypes } from 'sequelize';
-import pool from '../database';
+
 
 const sequelize = new Sequelize({
+    database: 'inventory',
+    username: 'postgres',
+    password: 'mypas123',
+    host: 'localhost',
+    port: 5432,
     dialect: 'postgres',
-    dialectModule: require('pg'),
-    pool: pool,
+    pool: {
+        max: 5,
+        min: 0,
+        acquire: 30000,
+        idle: 10000
+    }
 });
 
 const Inventory = sequelize.define('Inventory', {
@@ -15,11 +24,11 @@ const Inventory = sequelize.define('Inventory', {
     location: {
         type: DataTypes.ENUM({
             values: [
-                'მთავარი ოფისი',
-                'კავეა გალერია',
-                'კავეა თბილისი მოლი',
-                'კავეა ისთ ფოინთი',
-                'კავეა სითი მოლი'
+                'Main Office',
+                'Cavea Gallery',
+                'Cavea Tbilisi Mall',
+                'Cavea East Point',
+                'Cavea City Mall'
             ],
 
         }),

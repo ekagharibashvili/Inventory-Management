@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/inventory', inventoryRoutes)
+app.use('/api/inventory', inventoryRoutes)
 
 
 app.listen(port, () => {

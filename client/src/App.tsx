@@ -1,20 +1,15 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import TableComponent from './Table';
 
-function App() {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    axios.get("http://localhost:8080/")
-      .then(response => setMessage(response.data))
-      .catch(error => console.error(error));
-  }, []);
-
+const App: React.FC = () => {
   return (
-    <div>
-      <p>{message}</p>
-    </div>
+    <Container>
+      <h1>Items</h1>
+      <TableComponent />
+    </Container>
   );
-}
+};
 
 export default App;
+

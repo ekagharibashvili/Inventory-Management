@@ -10,7 +10,8 @@
     "start:client": "react-scripts start",
     "build:client": "react-scripts build",
     "test:client": "react-scripts test",
-    "eject:client": "react-scripts eject"
+    "eject:client": "react-scripts eject",
+    "generate-data": "ts-node src/generate-data.ts"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +22,7 @@
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "faker": "^5.5.3",
     "pg": "^8.9.0",
     "sequelize": "^6.29.0"
   },

@@ -1,13 +1,16 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
-import TableComponent from './Table';
+import ProductsPage  from './pages/Products';
+import AddProductPage from './pages/AddProduct';
+import { Route, Routes } from "react-router-dom";
+
 
 const App: React.FC = () => {
   return (
-    <Container>
-      <h1>Items</h1>
-      <TableComponent />
-    </Container>
+    <Routes>
+          <Route path="/" element={<ProductsPage/>} />
+          <Route path="/add" element={<AddProductPage/>} />
+    </Routes>
+    
   );
 };
 
